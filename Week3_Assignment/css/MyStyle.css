@@ -1,0 +1,141 @@
+body {
+  font-size: 16px;
+  color: #45433e;
+  
+  font-family: "Oxygen", sans-serif;
+}
+
+#header-nav {
+  background-color: #b8dbc2;
+  border-radius: 0;
+  border: 2px;
+}
+
+.navbar-brand {
+  padding: 20px 0 50px 0;
+}
+
+.navbar-brand h1 {
+  font-family: "Times New Roman", Times, serif;
+  color: #422220;
+  font-size: 1.8em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 4px 4px 4px #222;
+  margin-top: 3px;
+  margin-bottom: 5px !important;
+  line-height: 0.75;
+}
+.navbar-brand a:hover,
+.navbar-brand a:focus {
+  text-decoration: none;
+}
+
+#nav-list {
+  margin-top: 0px;
+}
+#nav-list a {
+  color:#45433e;
+  text-align: center;
+  font-size: 1.2em;
+}
+#nav-list a:hover {
+  background:white;
+}
+#nav-list a span {
+  font-size: 1.2em;
+}
+#nav-list li hr {
+  margin: 0px !important;
+}
+.navbar-header button.navbar-toggle,
+.navbar-header .icon-bar {
+  border: 2px solid #422220 !important;
+}
+.navbar-header button.navbar-toggle:hover {
+  border: 2px solid black !important;
+}
+.navbar-header button.navbar-toggle {
+  clear: both;
+  margin-top: -30px;
+}
+
+
+#content-box {
+  width: 99%;
+}
+#content-box .content-box-heading h2 {
+  color: #422220;
+  text-align: center;
+  font-size: 2.5em !important;
+  margin: 25px;
+}
+#content-box .info-box {
+  position: relative;
+  border: 3px solid grey;
+  margin: 7px 10px 15px 18px;
+
+}
+#content-box .info-box h1 {
+  color: #422220;
+  text-align: center;
+}
+#content-box .info-box p {
+  color: #422220;
+  text-align: justify;
+  font-size: 1.2em !important;
+}
+
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+  #chicken-info-box,#beef-info-box,#sushi-info-box {
+    width: 31%;
+  }
+}
+
+/********** Medium devices only **********/
+@media (min-width: 992px) and (max-width: 1199px) {
+    #chicken-info-box,#beef-info-box {
+      width: 45%;
+    }
+    #sushi-info-box {
+        width: 96%;
+    }
+}
+
+/********** Small devices only **********/
+@media (min-width: 768px) and (max-width: 991px) 
+{
+    .navbar-brand h1 
+    {
+        margin:5px 0px 0px 30px !important;
+    }
+    #chicken-info-box,#beef-info-box,#sushi-info-box {
+        width: 97%;
+      }
+}
+
+/********** Extra small devices only **********/
+@media (max-width: 767px) {
+    .navbar-brand {
+        padding: 20px 0 30px 0;
+      }
+    .navbar-brand h1 
+    {
+        margin:5px 0px 0px 30px !important;
+    }
+    .navbar-collapse
+    {
+        background-color:#ebad02  !important;
+    }
+    #chicken-info-box,#beef-info-box,#sushi-info-box {
+        width: 94%;
+      }
+}
+
+
+
+
+
+
