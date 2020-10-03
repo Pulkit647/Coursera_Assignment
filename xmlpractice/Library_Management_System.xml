@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="lmsStyling.xsl"?>
+<Library xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="Library_Management_System_Schema.xsd">
+<Book>
+    <Title>Life Amazing's Secret</Title>
+    <Author>Gour Gopal das</Author>
+    <ISBN>12735</ISBN>
+    <Price>475</Price>
+</Book>
+<Librarian>
+    <Name>Pulkit Bhagwate </Name>
+    <Salary>12500</Salary>
+</Librarian>
+
+<Book>
+    <Title>VB.NET</Title>
+    <Author>Keyur Patel</Author>
+    <ISBN>78945</ISBN>
+    <Price>400</Price>
+</Book>
+<Librarian>
+    <Name>Rahul Patel</Name>
+    <Salary>18500</Salary>
+</Librarian>
+
+<Book>
+    <Title>C</Title>
+    <Author>Prakash Sharma</Author>
+    <ISBN>75489</ISBN>
+    <Price>1250</Price>
+</Book>
+<Librarian>
+    <Name>Mayur Patel</Name>
+    <Salary>25000</Salary>
+</Librarian>
+
+<Book>
+    <Title>OS</Title>
+    <Author>Nainesh Patel</Author>
+    <ISBN>12564</ISBN>
+    <Price>850</Price>
+</Book>
+<Librarian>
+    <Name>Monu Patel</Name>
+    <Salary>35000</Salary>
+</Librarian>
+
+<Book>
+    <Title>RDBMS</Title>
+    <Author>Rajesh Sharma</Author>
+    <ISBN>78912</ISBN>
+    <Price>700</Price>
+</Book>
+<Librarian>
+    <Name>Akash Sharma</Name>
+    <Salary>45000</Salary>
+</Librarian>
+
+
+</Library>
