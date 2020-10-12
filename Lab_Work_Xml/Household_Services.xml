@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Household_Services.xsl"?>
+<Services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="Household_Services.xsd">
+      <UserDetails>
+      	<Name>PulkitBhagwate</Name>
+      	<Age>21</Age>
+      	<Address>Kadodara</Address>
+      	<State>Gujarat</State>
+      	<City>Surat</City>
+      	<Phone>9898826290</Phone>
+      </UserDetails>
+      <ServicesDetails>
+      	<Name>KeyurPatel</Name>
+      	<City>Surat</City>
+      	<Phone>9998408707</Phone>
+      	<Category>Electrician</Category>
+      </ServicesDetails>
+
+      <UserDetails>
+      	<Name>YashKataria</Name>
+      	<Age>21</Age>
+      	<Address>Vapi</Address>
+      	<State>Gujarat</State>
+      	<City>Vapi</City>
+      	<Phone>7383778822</Phone>
+      </UserDetails>
+      <ServicesDetails>
+      	<Name>NaineshPatel</Name>
+      	<City>Vapi</City>
+      	<Phone>9825612450</Phone>
+      	<Category>Carpenter</Category>
+      </ServicesDetails>
+
+      <UserDetails>
+      	<Name>PraneetKaisare</Name>
+      	<Age>21</Age>
+      	<Address>Vyara</Address>
+      	<State>Gujarat</State>
+      	<City>Vyara</City>
+      	<Phone>7043588947</Phone>
+      </UserDetails>
+      <ServicesDetails>
+      	<Name>MayurJain</Name>
+      	<City>Surat</City>
+      	<Phone>9998408707</Phone>
+      	<Category>Plumber</Category>
+      </ServicesDetails>
+
+       <UserDetails>
+      	<Name>SouvikDatta</Name>
+      	<Age>21</Age>
+      	<Address>Bardoli</Address>
+      	<State>Gujarat</State>
+      	<City>Bardoli</City>
+      	<Phone>9898988825</Phone>
+      </UserDetails>
+      <ServicesDetails>
+      	<Name>RameshPatel</Name>
+      	<City>Bardoli</City>
+      	<Phone>9786543210</Phone>
+      	<Category>Electrician</Category>
+      </ServicesDetails>
+
+<UserDetails>
+      	<Name>KishanMistry</Name>
+      	<Age>21</Age>
+      	<Address>Valsad</Address>
+      	<State>Gujarat</State>
+      	<City>Valsad</City>
+      	<Phone>9871345620</Phone>
+      </UserDetails>
+      <ServicesDetails>
+      	<Name>SureshPatel</Name>
+      	<City>Valsad</City>
+      	<Phone>9877418520</Phone>
+      	<Category>Carpenter</Category>
+      </ServicesDetails>
+
+      <UserDetails>
+      	<Name>Ritikjain</Name>
+      	<Age>21</Age>
+      	<Address>Chalthan</Address>
+      	<State>Gujarat</State>
+      	<City>surat</City>
+      	<Phone>9662863555</Phone>
+      </UserDetails>
+      <ServicesDetails>
+      	<Name>RajeshJain</Name>
+      	<City>Surat</City>
+      	<Phone>9898826280</Phone>
+      	<Category>Plumber</Category>
+      </ServicesDetails>
+
+      </Services>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="Services">
+		<xsd:complexType>
+		<xsd:element name="UserDetails">
+			<xsd:complexType>
+			<xsd:sequence>
+					<xsd:element name="Name" type="xs:string"/>
+					<xsd:element name="Age" type="xs:integer"/>
+					<xsd:element name="Address" type="xs:string"/>
+					<xsd:element name="State" type="xs:string"/>
+					<xsd:element name="Phone" type="xs:integer"/>
+				</xsd:sequence>	
+			</xsd:complexType>
+		</xsd:element>
+
+		<xs:element name="ServicesDetails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="City" type="xs:string"/>
+            <xs:element name="Phone" type="xs:string"/>
+            <xs:element name="Category">
+						<xsd:simpleType>
+    							<xsd:restriction base="xs:string">
+      								<xsd:enumeration value="Electrician"/>
+      								<xsd:enumeration value="Carpenter"/>
+      								<xsd:enumeration value="Plumber"/>
+    							</xsd:restriction>
+  						</xsd:simpleType>	
+					</xsd:element>
+
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
