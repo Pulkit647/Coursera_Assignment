@@ -1,7 +1,8 @@
 body{
 		font-family: "Times New Roman";
-	}
 
+	} 
+ 
 	.bg_color{
 		background-color: #eb6960;
 	}
@@ -67,4 +68,11 @@ a:hover{
 
 .card_css{
 	padding: 3%;
+}
+.form_lbl{
+  font-weight: bolder;
+  
+  font-size: 20px;
+ 
+
 }
