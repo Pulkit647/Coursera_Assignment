@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		 <meta charset="UTF-8">
+	<title>Home</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+		 <meta charset="UTF-8">
+	<title>Home</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+	<style>
+		a:visited {
+			color: pink;
+		}
+		
+	</style>
+</head>
+
+<body>
+
+<script>
+ function validate_fileupload(fileName)
+        {
+            var file_extension = fileName.split('.').pop().toLowerCase(); 
+
+            if(file_extension != "jpg")
+            {
+                alert("Invalid file Format.Only JPG allowed.");
+                document.getElementById("File_proof").value="";
+            }
+        }
+        function validate_password(password)
+        {
+        	var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+        	password=document.getElementById("Password_Text");
+        	
+        	if(password.value.match(passw))
+        	{
+        		return true;
+        	}
+        	else{
+        		alert("Please Enter Password Correctly");
+        		return false;
+        		
+        	}
+        	
+        }
+        function match_password(confirmpass)
+        {
+        	
+        	confirmpass=document.getElementById("Confirm_Password_Text");
+        	var password=document.getElementById("Password_Text");
+        	if(confirmpass==password)
+        	{
+        		return true;
+        	}
+        	else{
+        		alert("Your Password not match");
+        	}
+
+        }
+
+        function Character(Name_Text)
+        { 
+        	Name_Text=document.getElementById('Name_Text');
+        	City_Text=document.getElementById('City_Text');
+            var letters = /^[A-Za-z]+$/;
+            if(Name_Text.value.match(letters) || (City_Text.value.match(letters)))
+            {
+                
+                return true;
+            }
+            else
+            {
+                alert('Enter Only Character');
+                return false;
+            }
+            
+      } 
+        function validate()
+        {
+            var ele = document.getElementsByName('Gender');
+            var cnt=0;
+            var mailformat = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]$/ ;
+            var phoneformat=/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/ ;
+            
+            for(i = 0; i < ele.length; i++)
+            { 
+                if(ele[i].checked) 
+                cnt=cnt+1; 
+            } 
+            if (document.getElementById("Name_Text").value == "")
+            {
+               // alert(" Please Enter Name Correctly.");
+                document.getElementById("Name_Text").style.border="2px solid red";
+            }
+             if(!(mailformat.test(document.getElementById("Email_Text").value)))
+            {
+              
+               document.getElementById("Email_Text").style.border="2px solid red";
+
+            }
+             if(!(phoneformat.test(document.getElementById("Phone_Text").value)))
+            {
+            	document.getElementById("Phone_Text").style.border="2px solid red";
+                //alert("Enter Valid Phone No.");
+            }
+             if(cnt==0)
+            {
+                      alert("Please select a Gender");
+            }
+             if(document.getElementById("Address_Text").value == "")
+            {
+                document.getElementById("Address_Text").style.border="2px solid red";
+        
+            }
+               
+            
+             if(document.getElementById("City_Text").value == "")
+            {
+                
+                document.getElementById("City_Text").style.border="2px solid red";
+            }
+            if(document.getElementById("Password_Text").value == "")
+            {
+                document.getElementById("Password_Text").style.border="2px solid red";
+            }
+            if(document.getElementById("Confirm_Password_Text").value == "")
+            {
+                
+                document.getElementById("Confirm_Password_Text").style.border="2px solid red";
+            }
+             if(document.getElementById("File_proof").value == "")
+            {
+                alert("Please add a Profile photo.");
+            }
+            else
+            {
+                alert("Submitted Successfully");
+            }
+        }
+    </script>    
+
+<header>
+<ul>
+  <li><h1 class="name">HouseHoldServices</h1></li>
+
+
+  	<li><a href="Signup.html">Sign Up</a></li>
+  	<li><a href="#">Contact Us</a></li>
+  	<li><a href="#">About Us</a></li>
+ 	<li><a href="Lab_Work_Xml/HouseHold_Services.xml">View Details</a></li>
+  	<li><a href="services.html">Services</a></li>
+  	<li><a href="home.html">Home</a></li>
+  	
+
+  <!-- <li style="float:right;color: white;position: relative;top: 20px;right: 20px;">+919898826290</li> -->
+</ul>
+
+</header>
+<header style="position: relative;top: 17px;">
+	<center><h1 style="color:red;">Registration Form</h1><center><br/>
+		</header>
+			
+
+		
+<center><section>
+   
+    <div class="container">
+        <form action="#">
+            <table  cellpadding="15" cellspacing="20">
+                <tr >
+                    <td><span class="form_lbl">Name</span></td>
+                    <td><input type="text" id="Name_Text" placeholder="Name" onchange="Character(this.value) "/></td>
+                </tr>
+                <tr>
+                    <td><span class="form_lbl">Email ID</span></td>
+                    <td><input type="text" id="Email_Text" placeholder="Eg: xyz@example.com"/></td>
+                </tr>
+                <tr>
+                    <td><span class="form_lbl">Phone No.</span></td>
+                    <td><input type="text" id="Phone_Text" placeholder="Phone No."/></td>
+                </tr>
+                <tr>
+                    <td><span class="form_lbl">Gender</span></td>
+                    <td>
+                        <input type="radio" id="GN_m" name="Gender" value="Male">
+                        <label for="GN_m">Male</label>
+                        <input type="radio" id="GN_f" name="Gender" value="Female">
+                        <label for="GN_f">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="form_lbl">Address</span></td>
+                    <td><textarea id="Address_Text" placeholder="Address"></textarea></td>
+                </tr>
+                <tr>
+                    <td><span class="form_lbl">City</span></td>
+                    <td><input type="text" id="City_Text" placeholder="City" onchange="Character(this.value) "/></td>
+                </tr>
+
+                <tr>
+                    <td><span class="form_lbl">Password</span></td>
+                    <td><input type="text" id="Password_Text" placeholder="Password" onchange="validate_password(this.value) " /></td>
+                </tr>
+                
+                <tr>
+                    <td><span class="form_lbl">Confirm Password</span></td>
+                    <td><input type="text" id="Confirm_Password_Text" placeholder="Confirm Password"
+                     onchange="match_password(this.value) "/></td>
+                </tr>
+                
+
+                <tr >
+                    <td><span class="form_lbl">Profile Photo</span></td>
+                    <td ><input class="file" type="file" id="File_proof" onchange="validate_fileupload(this.value)"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button style="margin-left:32%; padding:2% 6%;  " onclick="validate()">Submit</button></td>              
+                </tr>
+            </table>
+        </form>
+    </div>
+    </section>
+    </center>
+    <footer>
+		<div class="row">
+			<div class="col-sm-12 bg_color" style="font-size: 18px;padding-top: 1%;">
+				<p style="text-align: center;">Copyright © Household Services. All rights reserved.</p>
+			</div>
+		</div>
+	</footer>
+</header>
+
