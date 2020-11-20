@@ -1,0 +1,148 @@
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+    <title>DOM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    <style>
+        a:visited {
+            color: pink;
+        }
+        table,th,td
+    {
+     border:2px solid rgb(255, 17, 0);
+     
+    }
+    th{
+        background-color:goldenrod;
+    }
+    th,td{
+        padding: 12px;
+        text-align: center;
+    }
+        
+    </style>
+
+</head>
+<body>
+
+
+<header>
+<ul>
+  <li><h1 class="name">HouseHoldServices</h1></li>
+  <li><a href="Login_main.html">Logout</a></li>
+  <li><a href="Signup.html">Sign Up</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="#">About Us</a></li>
+   <li><a href="Lab_Work_Xml/HouseHold_Services.xml">View Details</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="home.html">Home</a></li>
+    
+
+  <!-- <li style="float:right;color: white;position: relative;top: 20px;right: 20px;">+919898826290</li> -->
+</ul>
+</header>
+
+   <center><h2 style="position: relative;top: 6px;">Household Services Details</h2>
+    
+    <button type="button" style="position: relative;top:8px;" onclick="loadXML('UserDetails','ServicesDetails')">Get Details</button>
+    <br><br>
+    <div>
+    <p id="user" style="position: relative;right: 290px;top:60px; font-size: 30px;font-weight: bolder; visibility: hidden;">User Details</p>
+    <p id="det_service" style="position: relative;left: 290px;font-size: 30px;font-weight: bolder;visibility: hidden;">Services Details</p>
+    <table id="demo"   style="width:40% ;position:relative; right: 310px;"></table>
+    <table id="service"   style="width:40%; position: relative; left: 300px;bottom: 310px"></table>
+</div>
+</center>
+
+    <script>
+    function loadXML(Caller,service)
+    {
+        
+        var xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function()
+        {
+            
+            
+            if(this.readyState==4 && this.status==200 && Caller=='UserDetails' && service=='ServicesDetails')
+            {
+                
+                Details(this,'UserDetails','ServicesDetails');
+            }
+            // else if(this.readyState==4 && this.status==200 && Caller=='ServicesDetails')
+            // {
+
+            //     Details(this,'ServicesDetails');
+            //     // alert('Products');
+            // } 
+        };
+        xhttp.open("GET","Household_Services.xml",true);
+        xhttp.send();
+    }
+    
+    function Details(xml,Caller,service)
+    {
+        var i;
+        var xmlDoc=xml.responseXML;
+        if(Caller=='UserDetails')
+        {
+
+            document.getElementById("user").style.visibility = "visible";
+            var t="<tr><th>Name</th><th>Age</th><th>Address</th><th>State</th><th>City</th><th>Phone</th></tr>";
+            var x=xmlDoc.getElementsByTagName("UserDetails");
+            for(i=0;i<x.length;i++)
+            {
+                t +="<tr><td>" +
+                x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("Age")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("State")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("City")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("Phone")[0].childNodes[0].nodeValue +
+                "</td></tr>";
+                
+                
+                
+                
+            }
+            document.getElementById("demo").innerHTML=t;
+           
+        }
+            if(service=='ServicesDetails')
+            {
+                document.getElementById("det_service").style.visibility = "visible";
+                
+            var t="<tr><th>Name</th><th>City</th><th>Phone</th><th>Category</th></tr>";
+            var x=xmlDoc.getElementsByTagName("ServicesDetails");
+            for(i=0;i<x.length;i++)
+            {
+                t +="<tr><td>" +
+                x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("City")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("Phone")[0].childNodes[0].nodeValue +
+                "</td><td>" +
+                x[i].getElementsByTagName("Category")[0].childNodes[0].nodeValue +
+                "</td></tr>";
+            }
+        }
+
+        document.getElementById("service").innerHTML=t;
+    }
+
+    </script
+
+</body>
+</html>
