@@ -1,7 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	 <meta charset="UTF-8">
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+</script>
+<script>
+	$(document).ready(function()
+	{
+		
+  $("button").click(function()
+  {
+	
+	  
+    $("#test").load("Dom_Parser.html");
+	
+	
+  });
+});
+
+</script>
+<script>
+    function loadXML(Caller)
+    {
+        
+        var xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function()
+        {
+            
+            
+            if(this.readyState==4 && this.status==200 )
+            {
+               
+                Details(this,Caller);
+            }
+            // else if(this.readyState==4 && this.status==200 && Caller=='ServicesDetails')
+            // {
+
+            //     Details(this,'ServicesDetails');
+            //     // alert('Products');
+            // } 
+        };
+        xhttp.open("GET","Household_Services.xml",true);
+        xhttp.send();
+    }
+    
+    function Details(xml,Caller)
+    {
+        
+        // if(Caller=='UserDetails')
+        // {
+
+        //     document.getElementById("user").style.visibility = "visible";
+        //     var t="<tr><th>Name</th><th>Age</th><th>Address</th><th>State</th><th>City</th><th>Phone</th></tr>";
+        //     var x=xmlDoc.getElementsByTagName("UserDetails");
+        //     for(i=0;i<x.length;i++)
+        //     {
+        //         t +="<tr><td>" +
+        //         x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue +
+        //         "</td><td>" +
+        //         x[i].getElementsByTagName("Age")[0].childNodes[0].nodeValue +
+        //         "</td><td>" +
+        //         x[i].getElementsByTagName("Address")[0].childNodes[0].nodeValue +
+        //         "</td><td>" +
+        //         x[i].getElementsByTagName("State")[0].childNodes[0].nodeValue +
+        //         "</td><td>" +
+        //         x[i].getElementsByTagName("City")[0].childNodes[0].nodeValue +
+        //         "</td><td>" +
+        //         x[i].getElementsByTagName("Phone")[0].childNodes[0].nodeValue +
+        //         "</td></tr>";
+                
+                
+                
+                
+        //     }
+        //     document.getElementById("demo").innerHTML=t;
+           
+        // }
+        var i;
+        var xmlDoc=xml.responseXML;
+            if(Caller=='Carpenter' )
+            {
+				
+                // document.getElementById("det_service").style.visibility = "visible";
+                
+                var t="<tr><th>Name</th><th>City</th><th>Phone</th><th>Category</th></tr>";
+                var x=xmlDoc.getElementsByTagName("ServicesDetails");
+            
+                for(i=0;i<x.length;i++)
+                {
+                if(x[i].getElementsByTagName("Category")[0].childNodes[0].nodeValue=="Carpenter")
+                {
+					
+                    t +="<tr><td>" +
+                    x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                     x[i].getElementsByTagName("City")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                     x[i].getElementsByTagName("Phone")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("Category")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+                }
+            }
+			document.getElementById("service").style.visibility="visible";
+			document.getElementById("service").innerHTML=t;
+         }
+             if(Caller=='Electrician')
+            {
+               
+				
+                
+                var t="<tr><th>Name</th><th>City</th><th>Phone</th><th>Category</th></tr>";
+                var x=xmlDoc.getElementsByTagName("ServicesDetails");
+            
+                for(i=0;i<x.length;i++)
+                {
+                if(x[i].getElementsByTagName("Category")[0].childNodes[0].nodeValue=="Electrician")
+                {
+                    t +="<tr><td>" +
+                    x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                     x[i].getElementsByTagName("City")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                     x[i].getElementsByTagName("Phone")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("Category")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+                }
+            }
+			document.getElementById("service").style.visibility="visible";
+			document.getElementById("service").innerHTML=t;
+            }
+            if(Caller=="Plumber")
+			{
+                
+				
+                
+                var t="<tr><th>Name</th><th>City</th><th>Phone</th><th>Category</th></tr>";
+                var x=xmlDoc.getElementsByTagName("ServicesDetails");
+            
+                for(i=0;i<x.length;i++)
+                {
+                if(x[i].getElementsByTagName("Category")[0].childNodes[0].nodeValue=="Plumber")
+                {
+                    t +="<tr><td>" +
+                    x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                     x[i].getElementsByTagName("City")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                     x[i].getElementsByTagName("Phone")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("Category")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+                }
+            }
+			document.getElementById("service").style.visibility="visible";
+			document.getElementById("service").innerHTML=t;
+            }
+
+            
+			
+
+
+            //    else
+            //    {
+            //     t +="<tr><td>" +
+            //         x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue +
+            //         "</td><td>" +
+            //          x[i].getElementsByTagName("City")[0].childNodes[0].nodeValue +
+            //         "</td><td>" +
+            //          x[i].getElementsByTagName("Phone")[0].childNodes[0].nodeValue +
+            //         "</td><td>" +
+            //         x[i].getElementsByTagName("Category")[0].childNodes[0].nodeValue +
+            //         "</td></tr>";
+            //    }
+                
+    
+    }
+
+</script>
+
+
+<meta charset="UTF-8">
 	<title>Home</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -15,6 +195,23 @@
 			color: pink;
 		}
 		
+		
+		table,tr,td{
+			border: 2px solid darkcyan;
+			font-size: 20px;
+			
+			text-align: center;
+			
+			
+
+		}
+		th{
+			
+			font-size: 22px;
+			border: 2px solid darkcyan;
+			background-color:tomato;
+		
+		}
 	</style>
 </head>
 <body>
@@ -23,6 +220,7 @@
 <ul>
   <li><h1 class="name">HouseHoldServices</h1></li>
 
+  <li><a href="Login_main.html">Logout</a></li>
 <li><a href="Signup.html">Sign Up</a></li>
   <li><a href="#">Contact Us</a></li>
   <li><a href="#">About Us</a></li>
@@ -146,9 +344,11 @@
 					    <div class="card-body">
 					      <h4 class="card-title">Carpenter</h4>
 					      <p class="card-text">Name-Patel Abhishek</p>
-					      <p class="card-text">Phone-9854678400</p>
-					      <a href="#" class="btn btn-default bg_color">See More</a>
-					    </div>
+						  <p class="card-text">Phone-9854678400</p>
+						  <button id="carpenter" class="btn btn-info " onclick="loadXML('Carpenter')">See More</button>
+						</div>
+						
+						
 					  </div>
 				</div >
 
@@ -158,9 +358,11 @@
 					    <div class="card-body">
 					      <h4 class="card-title">Electrician</h4>
 					      <p class="card-text">Name-Patel Raj</p>
-					      <p class="card-text">Phone-8866001234</p>
-					      <a href="#" class="btn btn-default bg_color">See More</a>
-					    </div>
+						  <p class="card-text">Phone-8866001234</p>
+						  <button id="Electrician" class="btn btn-info " onclick="loadXML('Electrician')">See More</button>
+						</div>
+						
+
 					  </div>
 				</div>
 
@@ -170,16 +372,25 @@
 					    <div class="card-body">
 					      <h4 class="card-title">Plumber</h4>
 					      <p class="card-text">Name-Rathod Vikas</p>
-					      <p class="card-text">Phone-9998408757</p>
-					      <a href="#" class="btn btn-default bg_color">See More</a>
-					    </div>
-					  </div>
+						  <p class="card-text">Phone-9998408757</p>
+						  <button id="Plumber" class="btn btn-info " onclick="loadXML('Plumber')">See More</button>
+						 </div> 
+						
+
+					
 				</div>
 
 			</div>
 
 		 </div>
-		<center><a href="#">View all services</a></center>
+
+		 <div>
+			<center><table id="service" style="visibility: hidden;" cellpadding="2"></center>
+
+			</table>
+		</div>
+
+		<br><center><a href="#">View all services</a></center>
 		<br/>
 	</section>
 
