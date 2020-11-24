@@ -30,16 +30,75 @@
 <body>
 
 <script>
- function validate_fileupload(fileName)
-        {
-            var file_extension = fileName.split('.').pop().toLowerCase(); 
 
-            if(file_extension != "jpg")
+function Setcookie()
+    {
+        
+
+       
+         
+            
+            document.cookie="Name_Text="+document.getElementById("Name_Text").value+";expires=Sun, 29 Nov 2020 23:50:00 UTC";
+            document.cookie="Email_Text="+document.getElementById("Email_Text").value+";expires=Sun, 29 Nov 2020 23:50:00 UTC";
+            document.cookie="Phone_Text="+document.getElementById("Phone_Text").value+";expires=Sun, 29 Nov 2020 23:50:00 UTC";
+            document.cookie="Address_Text="+document.getElementById("Address_Text").value+";expires=Sun, 29 Nov 2020 23:50:00 UTC";
+            document.cookie="City_Text="+document.getElementById("City_Text").value+";expires=Sun, 29 Nov 2020 23:50:00 UTC";
+            document.cookie="Password_Text="+document.getElementById("Password_Text").value+";expires=Sun, 29 Nov 2020 23:50:00 UTC";
+            document.cookie="Confirm_Password_Text="+document.getElementById("Confirm_Password_Text").value+";expires=Sun, 29 Nov 2020 23:50:00 UTC";
+            
+            
+            
+        
+    }
+    window.onload=function()
+    {
+       
+       
+        if(document.cookie.length!=0)
+        {
+            var Allcookies,Temp;
+            Allcookies=document.cookie.split(";");   
+            for(var i=0;i<Allcookies.length;i++)
             {
-                alert("Invalid file Format.Only JPG allowed.");
-                document.getElementById("File_proof").value="";
+                Temp=Allcookies[i].split("=");
+                
+                if(Temp[0]=="Name_Text")
+                {
+    
+                    document.getElementById("Name_Text").value=Temp[1];
+                }
+                if(Temp[0]==" Email_Text")
+                {
+                    document.getElementById("Email_Text").value=Temp[1];
+                }
+                if(Temp[0]==" Phone_Text")
+                {
+                    document.getElementById("Phone_Text").value=Temp[1];
+                }
+                
+                if(Temp[0]==" Address_Text")
+                {
+                    document.getElementById("Address_Text").value=Temp[1];
+                }
+                if(Temp[0]==" City_Text")
+                {
+                    document.getElementById("City_Text").value=Temp[1];
+                }
+                if(Temp[0]==" Password_Text")
+                {
+                    document.getElementById("Password_Text").value=Temp[1];
+                }
+                if(Temp[0]==" Confirm_Password_Text")
+                {
+                    document.getElementById("Confirm_Password_Text").value=Temp[1];
+                }
+                
+
             }
         }
+    }
+
+        
         function validate_password(password)
         {
         	var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
@@ -56,13 +115,12 @@
         	}
         	
         }
-        function match_password(confirmpass)
+        function match_password(confirmpass,password)
         {
         	
-        	confirmpass=document.getElementById("Confirm_Password_Text");
-        	var password=document.getElementById("Password_Text");
-        	if(confirmpass==password)
+        	if(password==confirmpass)
         	{
+               
         		return true;
         	}
         	else{
@@ -71,14 +129,19 @@
 
         }
 
-        function Character(Name_Text)
+        function Character(Name_Text,City_Text)
         { 
-        	Name_Text=document.getElementById('Name_Text');
+        	
+            Name_Text=document.getElementById('Name_Text');
         	City_Text=document.getElementById('City_Text');
             var letters = /^[A-Za-z]+$/;
-            if(Name_Text.value.match(letters) || (City_Text.value.match(letters)))
+            if(Name_Text.value.match(letters) )
             {
                 
+                return true;
+            }
+            else if (City_Text.value.match(letters))
+            {
                 return true;
             }
             else
@@ -86,12 +149,11 @@
                 alert('Enter Only Character');
                 return false;
             }
-            
+           
       } 
         function validate()
         {
-            var ele = document.getElementsByName('Gender');
-            var cnt=0;
+            
             var mailformat = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]$/ ;
             var phoneformat=/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/ ;
             
@@ -116,10 +178,7 @@
             	document.getElementById("Phone_Text").style.border="2px solid red";
                 //alert("Enter Valid Phone No.");
             }
-             if(cnt==0)
-            {
-                      alert("Please select a Gender");
-            }
+            
              if(document.getElementById("Address_Text").value == "")
             {
                 document.getElementById("Address_Text").style.border="2px solid red";
@@ -141,10 +200,6 @@
                 
                 document.getElementById("Confirm_Password_Text").style.border="2px solid red";
             }
-             if(document.getElementById("File_proof").value == "")
-            {
-                alert("Please add a Profile photo.");
-            }
             else
             {
                 alert("Submitted Successfully");
@@ -157,14 +212,14 @@
   <li><h1 class="name">HouseHoldServices</h1></li>
 
 
-  	<li><a href="Signup.html">Sign Up</a></li>
-  	<li><a href="#">Contact Us</a></li>
-  	<li><a href="#">About Us</a></li>
- 	<li><a href="Lab_Work_Xml/HouseHold_Services.xml">View Details</a></li>
-  	<li><a href="services.html">Services</a></li>
-  	<li><a href="home.html">Home</a></li>
-  	
-
+  <li><a href="Login_main.html">Logout</a></li>
+  <li><a href="Signup.html">Sign Up</a></li>
+    <li><a href="#">Contact Us</a></li>
+    <li><a href="#">About Us</a></li>
+   <li><a href="Lab_Work_Xml/HouseHold_Services.xml">View Details</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="home.html">Home</a></li>
+    
   <!-- <li style="float:right;color: white;position: relative;top: 20px;right: 20px;">+919898826290</li> -->
 </ul>
 
@@ -182,7 +237,7 @@
             <table  cellpadding="15" cellspacing="20">
                 <tr >
                     <td><span class="form_lbl">Name</span></td>
-                    <td><input type="text" id="Name_Text" placeholder="Name" onchange="Character(this.value) "/></td>
+                    <td><input type="text" id="Name_Text" placeholder="Name" onchange="Character(this.value,City_Text.value) "/></td>
                 </tr>
                 <tr>
                     <td><span class="form_lbl">Email ID</span></td>
@@ -192,7 +247,7 @@
                     <td><span class="form_lbl">Phone No.</span></td>
                     <td><input type="text" id="Phone_Text" placeholder="Phone No."/></td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td><span class="form_lbl">Gender</span></td>
                     <td>
                         <input type="radio" id="GN_m" name="Gender" value="Male">
@@ -200,14 +255,14 @@
                         <input type="radio" id="GN_f" name="Gender" value="Female">
                         <label for="GN_f">Female</label>
                     </td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td><span class="form_lbl">Address</span></td>
                     <td><textarea id="Address_Text" placeholder="Address"></textarea></td>
                 </tr>
                 <tr>
                     <td><span class="form_lbl">City</span></td>
-                    <td><input type="text" id="City_Text" placeholder="City" onchange="Character(this.value) "/></td>
+                    <td><input type="text" id="City_Text" placeholder="City" onchange="Character(this.value,City_Text.value) "/></td>
                 </tr>
 
                 <tr>
@@ -218,16 +273,16 @@
                 <tr>
                     <td><span class="form_lbl">Confirm Password</span></td>
                     <td><input type="text" id="Confirm_Password_Text" placeholder="Confirm Password"
-                     onchange="match_password(this.value) "/></td>
+                     onchange="match_password(this.value,Password_Text.value) "/></td>
                 </tr>
                 
 
-                <tr >
+                <!-- <tr >
                     <td><span class="form_lbl">Profile Photo</span></td>
                     <td ><input class="file" type="file" id="File_proof" onchange="validate_fileupload(this.value)"/></td>
-                </tr>
+                </tr> -->
                 <tr>
-                    <td colspan="2"><button style="margin-left:32%; padding:2% 6%;  " onclick="validate()">Submit</button></td>              
+                    <td colspan="2"><button style="margin-left:32%; padding:2% 6%;  " onclick="validate();Setcookie()">Submit</button></td>              
                 </tr>
             </table>
         </form>
