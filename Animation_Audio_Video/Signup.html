@@ -157,14 +157,10 @@ function Setcookie()
             var mailformat = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]$/ ;
             var phoneformat=/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/ ;
             
-            for(i = 0; i < ele.length; i++)
-            { 
-                if(ele[i].checked) 
-                cnt=cnt+1; 
-            } 
+           
             if (document.getElementById("Name_Text").value == "")
             {
-               // alert(" Please Enter Name Correctly.");
+               
                 document.getElementById("Name_Text").style.border="2px solid red";
             }
              if(!(mailformat.test(document.getElementById("Email_Text").value)))
@@ -237,7 +233,7 @@ function Setcookie()
             <table  cellpadding="15" cellspacing="20">
                 <tr >
                     <td><span class="form_lbl">Name</span></td>
-                    <td><input type="text" id="Name_Text" placeholder="Name" onchange="Character(this.value,City_Text.value) "/></td>
+                    <td><input type="text" id="Name_Text" placeholder="Name" onchange="Character(this.value,City_Text.value)"/></td>
                 </tr>
                 <tr>
                     <td><span class="form_lbl">Email ID</span></td>
