@@ -83,23 +83,22 @@ function CallingXml()
         if(document.cookie.length!=0)
         {   
             
-            var cookie,Temp;
-            cookie=document.cookie.split(";");  
-          
+            var cookies,Temp;
+            cookies=document.cookie.split(";");  
             for(var i=0;i<cookies.length;i++)
             {
                 
-                Temp=cookies[i].split("=");
+               Temp=cookies[i].split("=");
                 
-                if(Temp[0]=="Username")
+                
+                if(Temp[0]==" Username")
                 {
-                    
-                    document.getElementById("Username").value=Temp[1];
+                   document.getElementById("Username").value=Temp[1];
                 }
-                if(Temp[0]=="Phone_Number")
+                if(Temp[0]==" Phone_Number")
                 {
                     
-                    document.getElementById("Phone_Number").value=Temp[1];
+                  document.getElementById("Phone_Number").value=Temp[1];
                 }
             }
         }
