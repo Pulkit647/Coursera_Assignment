@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+        Registration Form
+    </title>
+    <style>
+        h1{
+            text-align: center;
+            color:tomato;
+        }
+        .form_design{
+  font-weight: bolder;
+  
+  font-size: 20px;
+ 
+
+}
+tr,th,td{
+    border:2px solid black;
+}
+.arrange{
+    border:2px solid black;
+    position:relative;
+    top:25px;
+}
+
+    </style>
+</head>
+<body>
+
+
+<script>
+
+function CallingXml()
+    {
+        
+        var xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function()
+        {
+            
+            
+            if(this.readyState==4 && this.status==200 )
+            {
+               StudentsDetails(this);
+                
+            }
+             
+        };
+        xhttp.open("GET","Students_details.xml",true);
+        xhttp.send();
+    }
+    function StudentsDetails(xml)
+    {
+        
+       
+        var i;
+        var xmlDoc=xml.responseXML;
+            	
+                // document.getElementById("det_service").style.visibility = "visible";
+                
+                var t="<tr><th>Student Name</th><th>College</th></tr>";
+                var x=xmlDoc.getElementsByTagName("CS");
+            
+                for(i=0;i<x.length;i++)
+                {
+                
+					
+                    t +="<tr><td>" +
+                    x[i].getElementsByTagName("Name")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+            
+                    x[i].getElementsByTagName("UniversityName")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+                }
+                document.getElementById("det").innerHTML=t;
+     }
+     
+    window.onload=function()
+    {
+       
+       
+        if(document.cookie.length!=0)
+        {   
+            
+            var cookie,Temp;
+            cookie=document.cookie.split(";");  
+          
+            for(var i=0;i<cookies.length;i++)
+            {
+                
+                Temp=cookies[i].split("=");
+                
+                if(Temp[0]=="Username")
+                {
+                    
+                    document.getElementById("Username").value=Temp[1];
+                }
+                if(Temp[0]=="Phone_Number")
+                {
+                    
+                    document.getElementById("Phone_Number").value=Temp[1];
+                }
+            }
+        }
+
+
+    }
+    
+
+
+    function Name_Character(Name)
+        { 
+        	
+            Name=document.getElementById('Name');
+        	
+            var letters = /^[A-Za-z]+$/;
+            if(Name.value.match(letters)  )
+            {
+                
+                return true;
+            }
+            else{
+                alert('Enter Only Character..!');
+                return false;
+            }
+             
+      } 
+      function Username_Character(Username)
+        { 
+        	
+            Username=document.getElementById('Username');
+        	
+            var letters = /^[A-Z]{1}[A-Za-z]+$/;
+            if(Username.value.match(letters)  )
+            {
+                
+                return true;
+            }
+            else{
+                alert('Please Enter First letter Capital or Characters only..!');
+                return false;
+            }
+             
+      } 
+      function Phone(phone)
+        { 
+        	
+            phone=document.getElementById('Phone_Number');
+        	
+            var num = /[0-9]{10}/;
+            if(phone.value.length==10)
+            {
+                
+                return true;
+            }
+            else{
+                alert('Please Enter 10 Character only..!');
+                return false;
+            }
+             
+      } 
+      function Age_Positive(age)
+        {
+            age=document.getElementById('Age');
+        	
+            var num = /[0-9]/;
+            if(age.value>0)
+            {
+                
+                return true;
+            }
+            else{
+                alert('Enter Age in positive only..!');
+                return false;
+            }
+             
+      } 
+      function Email_Validate(email)
+        {
+            email=document.getElementById('Email');
+        	
+            var mailformat = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]$/ ;
+            if(email.value.match(mailformat)  )
+            {
+                
+                return true;
+            }
+            else{
+                alert('Enter Mail properly..!');
+                return false;
+            }
+             
+      } 
+
+      function validate_password(password)
+        {
+        	var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+        	password=document.getElementById("Password");
+        	
+        	if(password.value.match(passw))
+        	{
+        		return true;
+        	}
+        	else{
+        		alert("Please Enter Password Correctly");
+        		return false;
+        		
+        	}
+        	
+        }
+
+
+
+      function validate()
+        {
+           
+            if (document.getElementById("Name").value == "")
+            {
+               
+                document.getElementById("Name").style.border="2px solid red";
+            }
+            if (document.getElementById("Email").value == "")
+            {
+               
+                document.getElementById("Email").style.border="2px solid red";
+            }
+            if (document.getElementById("Branch").value == "")
+            {
+               
+                document.getElementById("Branch").style.border="2px solid red";
+            }
+            
+             if(document.getElementById("U_Name").value == "")
+            {
+                document.getElementById("U_Name").style.border="2px solid red";
+        
+            }
+               
+            
+             if(document.getElementById("State").value == "")
+            {
+                
+                document.getElementById("State").style.border="2px solid red";
+            }
+            if(document.getElementById("Address").value == "")
+            {
+                document.getElementById("Address").style.border="2px solid red";
+            }
+            if(document.getElementById("Age").value == "")
+            {
+                
+                document.getElementById("Age").style.border="2px solid red";
+            }
+            if(document.getElementById("Phone_Number").value == "")
+            {
+                
+                document.getElementById("Phone_Number").style.border="2px solid red";
+            }
+            if(document.getElementById("Username").value == "")
+            {
+                
+                document.getElementById("Username").style.border="2px solid red";
+            }
+            if(document.getElementById("Password").value == "")
+            {
+                
+                document.getElementById("Password").style.border="2px solid red";
+            }
+            
+            
+            else
+            {
+                alert("Submitted Successfully");
+            }
+            document.cookie="Username="+document.getElementById("Username").value+";expires=Wed, 2 Dec 2020 23:50:00 UTC";
+            document.cookie="Phone_Number="+document.getElementById("Phone_Number").value+";expires=Wed, 2 Dec 2020 23:50:00 UTC";
+    
+        }
+
+
+
+</script>
+
+
+
+
+
+
+    <h1>
+        Welcome to the Gateways 2020
+    </h1>
+    <form>
+        <center>        
+            <table cellpadding="4" cellspacing="10">
+                <tr>
+                    <td><span class="form_design">Name</span></td>
+                    <td><input type="text" id="Name"  placeholder="Name" onchange="Name_Character(this.value)" /></td>
+ 
+
+                </tr>
+                <tr >
+                    <td><span class="form_design">Email</span></td>
+                    <td><input type="text" id="Email" placeholder="Email" onchange="Email_Validate(Email.value)" /></td>
+                </tr>
+                <tr >
+                    <td><span class="form_design">Branch</span></td>
+                    <td><input type="text" id="Branch" placeholder="Branch" /></td>
+                </tr>
+                <tr >
+                    <td><span class="form_design">University Name</span></td>
+                    <td><input type="text" id="U_Name" placeholder="University Name" /></td>
+                </tr>
+                <tr >
+                    <td><span class="form_design">State</span></td>
+                    <td><input type="text" id="State" placeholder="State" /></td>
+                </tr>
+                <tr >
+                    <td><span class="form_design">Address</span></td>
+                    <td><textarea id="Address" placeholder="Address"></textarea></td>
+                    
+                    
+                </tr>
+                <tr >
+                    <td><span class="form_design">Age</span></td>
+                    <td><input type="text" id="Age" placeholder="Age" onchange="Age_Positive(Age.value)" /></td>
+                </tr>
+                <tr >
+                    <td><span class="form_design">Phone Number</span></td>
+                    <td><input type="text" id="Phone_Number" placeholder="Phone Number" onchange="Phone(this.value)" /></td>
+                </tr>
+                <tr >
+                    <td><span class="form_design">Username</span></td>
+                    <td><input type="text" id="Username" placeholder="Username"  onchange="Username_Character(this.value)"  /></td>
+                </tr>
+                <tr >
+                    <td><span class="form_design">Password</span></td>
+                    <td><input type="password" id="Password" placeholder="Password"  onchange="validate_password(this.value)"/></td>
+                </tr>
+                
+                    
+
+                
+
+        </table> 
+                <button  type="button" onclick="validate()">Submit</button>
+
+        <button  type="button" onclick="CallingXml()">View Details</button>
+        <table id="det" class="arrange" ></table>
+
+    </center>
+    
+    </form>
+    
+</body>

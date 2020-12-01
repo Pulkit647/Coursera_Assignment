@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Christ>
+    <CS>
+        <Name>Pulkit</Name>
+        <Email>pulkit.bhagwate02@gmail.com</Email>
+        <Branch>MCA</Branch>
+        <UniversityName>Christ</UniversityName>
+        <State>Surat</State>
+        <Address>Kadodara</Address>
+         <Age>21</Age>
+          <PhoneNumber>9898826290</PhoneNumber>
+           <Username>Pulkit</Username>
+            <Password>Pulkit@2123</Password>
+            
+
+    </CS>
+    <CS>
+        <Name>Yash</Name>
+        <Email>Yash.kataria@gmail.com</Email>
+        <Branch>MCA</Branch>
+        <UniversityName>Uka Tarsadia University</UniversityName>
+        <State>Vapi</State>
+        <Address>Kadodara</Address>
+         <Age>21</Age>
+          <PhoneNumber>999840870</PhoneNumber>
+           <Username>Yash</Username>
+            <Password>Yash@2123</Password>
+            
+
+    </CS>
+    <CS>
+        <Name>Praneet</Name>
+        <Email>praneet.kaisare@gmail.com</Email>
+        <Branch>MCA</Branch>
+        <UniversityName>Sabargaam</UniversityName>
+        <State>Surat</State>
+        <Address>Kadodara</Address>
+         <Age>21</Age>
+          <PhoneNumber>9898826291</PhoneNumber>
+           <Username>Praneet</Username>
+            <Password>Praneet@2123</Password>
+    </CS>
+</Christ>
