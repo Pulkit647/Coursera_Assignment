@@ -196,7 +196,7 @@
 		}
 		
 		
-		table,tr,td{
+		/* table,tr,td{
 			border: 2px solid darkcyan;
 			font-size: 20px;
 			
@@ -211,10 +211,13 @@
 			border: 2px solid darkcyan;
 			background-color:tomato;
 		
-		}
+		} */
 	</style>
 </head>
 <body>
+
+
+
 
 <header>
 <ul>
@@ -338,15 +341,22 @@
 		<div class="container">
 			<div class="row">
 
-				<div class="com-sm-4 card_css">
+				<div class="com-sm-4 card_css ">
 					<div class="card" style="width:300px;padding: 5%;">
-					    <img class="card-img-top" src="images/carpenter.jpg" alt="HouseHold Services|Carpenter " style="width:100%">
+					    <img class="card-img-top" src="images/Carpenter.jpg" alt="HouseHold Services|Carpenter " style="width:100%">
 					    <div class="card-body">
 					      <h4 class="card-title">Carpenter</h4>
 					      <p class="card-text">Name-Patel Abhishek</p>
 						  <p class="card-text">Phone-9854678400</p>
-						  <button id="carpenter" class="btn btn-info " onclick="loadXML('Carpenter')">See More</button>
+						  <button id="carpenter" class="btn btn-info " onclick="displaydata('Carpenter')">See More</button>
 						</div>
+						<div class="row">
+							<div class="col-sm-12">
+								<table id="service_json_Carpenter" border="2"   cellpadding="2"></table>
+							</div>
+						</div>
+						  
+						
 						
 						
 					  </div>
@@ -354,15 +364,19 @@
 
 				<div class="com-sm-4 card_css">
 					<div class="card" style="width:300px;padding: 5%;">
-					    <img class="card-img-top" src="images/electrician.jpg" alt="HouseHold Services|Electrician" style="width:100%">
+					    <img class="card-img-top" src="images/Electrician.jpg" alt="HouseHold Services|Electrician" style="width:100%">
 					    <div class="card-body">
 					      <h4 class="card-title">Electrician</h4>
 					      <p class="card-text">Name-Patel Raj</p>
 						  <p class="card-text">Phone-8866001234</p>
-						  <button id="Electrician" class="btn btn-info " onclick="loadXML('Electrician')">See More</button>
+						  <button id="Electrician" class="btn btn-info " onclick="displaydata('Electrician')">See More</button>
 						</div>
-						
-
+						<div class="row">
+							<div class="col-sm-12">
+								<table id="service_json_Electrician" border="2"   cellpadding="2"></table>
+							</div>
+						</div>
+						  
 					  </div>
 				</div>
 
@@ -373,11 +387,15 @@
 					      <h4 class="card-title">Plumber</h4>
 					      <p class="card-text">Name-Rathod Vikas</p>
 						  <p class="card-text">Phone-9998408757</p>
-						  <button id="Plumber" class="btn btn-info " onclick="loadXML('Plumber')">See More</button>
+						  <button id="Plumber" class="btn btn-info " onclick="displaydata('Plumber')">See More</button>
 						 </div> 
 						
-
-					
+						 <div class="row">
+							<div class="col-sm-12">
+								<table id="service_json_Plumber" border="2"   cellpadding="2"></table>
+							</div>
+						</div>
+						  
 				</div>
 
 			</div>
@@ -385,7 +403,7 @@
 		 </div>
 
 		 <div>
-			<center><table id="service" style="visibility: hidden;" cellpadding="2"></center>
+			<center></center>
 
 			</table>
 		</div>
@@ -404,5 +422,38 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+        <script>
+        
+            
+		function displaydata(cat)
+		{
+			
+			$(function() 
+            {
+			 var tr='<tr><th>Name</th><th>Age</th><th>Phone</th><th>Category</th></th>';
+           var people = [];
+           $.getJSON('Household.json', function(data)
+            {
+				document.getElementById("service_json_"+cat).innerHTML=tr;
+               $.each(data.ServiceDetails, function(i, f) 
+               {
+				   if(f.Category==cat)
+				   {
+					var tblRow = "<tr>" + "<td>" + f.Name + "</td>" +
+                   "<td>" + f.Age + "</td>" + "<td>" + f.phone + "</td>" + "<td>" + f.Category +"</tr>"
+                    $(tblRow).appendTo("#service_json_"+cat);
+				//    document.getElementById("service_json_"+cat).innerHTML=tblRow;
+				   
+             
+				   }
+            });
+        
+           });
+        
+        });
+		}
+        </script>
+
 </body>
 </html>
