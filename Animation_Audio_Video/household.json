@@ -1,0 +1,76 @@
+{
+    "USerDetails" :
+    [
+        {
+            "Name":"Pulkit",
+            "Age":21,
+            "Address":"Kadodara",
+            "State":"Gujarat",
+            "City":"Surat",
+            "Phone":9898826290
+        },
+        {
+            "Name":"Yash",
+            "Age":21,
+            "Address":"Vapi",
+            "State":"Gujarat",
+            "City":"Vapi",
+            "Phone":9998480707
+        },
+        {
+            "Name":"Praneet",
+            "Age":21,
+            "Address":"Vyara",
+            "State":"Gujarat",
+            "City":"Vyara",
+            "Phone":787881850
+        }
+
+    ],
+    "ServiceDetails":
+    [
+        {
+            "Name":"Keyur",
+            "Age":22,
+            "phone":7878887722,
+            "Category":"Electrician"
+        },
+        {
+            "Name":"Rajesh",
+            "Age":22,
+            "phone":7878887785,
+            "Category":"Electrician"
+        },
+        {
+            "Name":"Mayur",
+            "Age":22,
+            "phone":9898882200,
+            "Category":"Carpenter"
+        },
+        {
+            "Name":"Ramesh",
+            "Age":22,
+            "phone":9898882210,
+            "Category":"Carpenter"
+        },
+        {
+            "Name":"Nainesh",
+            "Age":22,
+            "phone":9898988824,
+            "Category":"Plumber"
+        },
+        {
+            "Name":"Anand",
+            "Age":22,
+            "phone":9898988844,
+            "Category":"Plumber"
+        }
+
+
+    ]
+
+    
+}
+
+
+    
