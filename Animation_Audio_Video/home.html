@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script src="angular.min.js"></script>
+    <script src="Angular.js"></script>
 	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
 </script>
@@ -214,7 +216,7 @@
 		} */
 	</style>
 </head>
-<body>
+<body ng-app="MyApp">
 
 
 
@@ -343,11 +345,14 @@
 
 				<div class="com-sm-4 card_css ">
 					<div class="card" style="width:300px;padding: 5%;">
-					    <img class="card-img-top" src="images/carpenter.jpg" alt="HouseHold Services|Carpenter " style="width:100%">
+					    <img class="card-img-top" src="images/Carpenter.jpg" alt="HouseHold Services|Carpenter " style="width:100%">
 					    <div class="card-body">
 					      <h4 class="card-title">Carpenter</h4>
 					      <p class="card-text">Name-Patel Abhishek</p>
 						  <p class="card-text">Phone-9854678400</p>
+						  
+						
+
 						  <button id="carpenter" class="btn btn-info " onclick="displaydata('Carpenter')">See More</button>
 						</div>
 						<div class="row">
@@ -355,6 +360,8 @@
 								<table id="service_json_Carpenter" border="2"   cellpadding="2"></table>
 							</div>
 						</div>
+						
+						
 						  
 						
 						
@@ -364,7 +371,7 @@
 
 				<div class="com-sm-4 card_css">
 					<div class="card" style="width:300px;padding: 5%;">
-					    <img class="card-img-top" src="images/electrician.jpg" alt="HouseHold Services|Electrician" style="width:100%">
+					    <img class="card-img-top" src="images/Electrician.jpg" alt="HouseHold Services|Electrician" style="width:100%">
 					    <div class="card-body">
 					      <h4 class="card-title">Electrician</h4>
 					      <p class="card-text">Name-Patel Raj</p>
@@ -397,8 +404,81 @@
 						</div>
 						  
 				</div>
+				
+				
 
 			</div>
+			
+			<div ng-controller="MyCtrl" style="text-align: center; margin-left: 380px;">
+				Rows to Display:<br \><input type="number" step="1" min="0" max="4" ng-model="rowlimit" />
+				<br \>
+				<br \>Search:<br \><input type="text" placeholder="Search Service Providers" ng-model="Search" />
+				<br \>
+				<br \>
+				<table border="1px solid black">
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Age</th>
+						<th>Phone</th>
+						<th>Category</th>
+						<th>Changes</th>
+					</tr>
+					<tbody>
+						
+					<tr ng-repeat="ServicesDetails in ServicesDetails | limitTo:rowlimit |filter:Search  ">
+						
+							
+						<td>{{$index}}</td>
+							<td>{{ServicesDetails.Name | uppercase}}</td>
+							<td>{{ServicesDetails.Age  }}</td>
+							<td>{{ServicesDetails.phone }}</td>
+							<td>{{ServicesDetails.Category }}</td>
+							<td>
+								<a href="#" ng-click="delete()">Delete</a> |
+								<a href="#" ng-click="edit(ServicesDetails.id)">Edit</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br/>
+				<br/>
+				<h3>Service Providers Details</h3>
+    <table cellpadding="2" cellspacing="2">
+        <tr>
+            <td>ID</td>
+            <td><input type="text" ng-model="id"></td>
+        </tr>
+        <tr>
+            <td>NAME</td>
+            <td><input type="text" ng-model="Name"></td>
+        </tr>
+        <tr>
+            <td>AGE</td>
+            <td><input type="text" ng-model="Age"></td>
+        </tr>
+        <tr>
+            <td>PHONE</td>
+            <td><input type="text" ng-model="phone"></td>
+        </tr>
+        <tr>
+            <td>CATEGORY</td>
+            <td><input type="text" ng-model="Category"></td>
+        </tr>
+        <tr>
+			<td>&nbsp;</td>
+			
+            <td><br/><input type="button" value="ADD" ng-click="add()">
+            <input type="button" value="Update" ng-click="save()"></td>
+        </tr>
+    </table>
+ 
+			</div>
+		
+			  
+			
+			
+		
 
 		 </div>
 
@@ -426,14 +506,13 @@
         <script>
         
             
-		function displaydata(cat)
+		function displaydata(cat)  
 		{
 			
 			$(function() 
             {
 			 var tr='<tr><th>Name</th><th>Age</th><th>Phone</th><th>Category</th></th>';
-           var people = [];
-           $.getJSON('Household.json', function(data)
+           	$.getJSON('Household.json', function(data)
             {
 				document.getElementById("service_json_"+cat).innerHTML=tr;
                $.each(data.ServiceDetails, function(i, f) 
